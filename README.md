@@ -1,9 +1,7 @@
 # MANTLE
 
-This repository is a source-only package of the MANTLE implementation and the
-three power-system inputs used by it. Experiment outputs, baseline
-implementations, tuning pipelines, statistics, figures, and manuscript tooling
-are intentionally excluded.
+This repository provides the MANTLE implementation and MANTLE-ready datasets for
+IEEE 14, IEEE 39, and RTS-GMLC.
 
 ## Included implementation
 
@@ -20,10 +18,9 @@ are intentionally excluded.
   `utilities`: coupled power/communication/mission/resource models, deterministic
   data conversion, validation, and reproducibility utilities.
 
-The exact dynamic program is the frozen reduced IEEE 14 implementation. IEEE 39
-and RTS-GMLC are included as complete coupled-system data packages and supported
-by the common model/data layer; this repository does not claim that the reduced
-IEEE 14 exact state space is a full-scale exact solver for those two systems.
+The exact dynamic program operates on the reduced IEEE 14 information-state
+model. IEEE 39 and RTS-GMLC use the shared coupled-system schema, conversion,
+validation, communication, mission, and restoration-resource layers.
 
 ## Data layout
 
@@ -34,22 +31,40 @@ IEEE 14 exact state space is a full-scale exact solver for those two systems.
 - `data/modified/<system>`: deterministic MANTLE-ready coupled-system,
   communication, mission, restoration-resource, and provenance JSON files.
 
-`third_party/pandapower/LICENSE` covers the two bundled pandapower case files.
-The RTS-GMLC data-use notice is retained verbatim in
-`data/original/rts_gmlc/repository_README.md`. No license has been assigned to
-the MANTLE source code in this整理版; publication to a public remote should wait
-until the owner selects a code license.
+Third-party source information is stored with the data. The pandapower license
+is at `third_party/pandapower/LICENSE`; the RTS-GMLC data notice is at
+`data/original/rts_gmlc/repository_README.md`.
 
-## Setup and checks
+## Environment
+
+Validated environment: 64-bit Windows 11, Python 3.11.9, and pip 25.2. The full
+package table is in `ENVIRONMENT.md`.
+
+### pip
 
 ```powershell
-python -m pip install -e ".[test]"
+python -m venv .venv
+.\.venv\Scripts\Activate.ps1
+python -m pip install --upgrade pip
+python -m pip install -r requirements-dev.txt
+python -m pip install -e . --no-deps
+```
+
+### Conda
+
+```powershell
+conda env create -f environment.yml
+conda activate mantle
+python -m pip install -e . --no-deps
+```
+
+## Run and verify
+
+```powershell
 pytest -q
 python scripts/run_ieee14_exact.py --budget 0 --horizon 1
 python scripts/build_systems.py
 ```
 
 `build_systems.py` regenerates `data/modified/<system>` from the bundled original
-inputs and the configuration under `configs/`. The repository does not contain
-generated experiment results.
-
+inputs and the configuration under `configs/`.

@@ -1,4 +1,4 @@
-"""Run the reduced IEEE 14 MANTLE exact solver without writing result files."""
+"""Run the reduced IEEE 14 MANTLE exact solver and print its summary."""
 
 from __future__ import annotations
 

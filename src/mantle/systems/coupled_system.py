@@ -70,7 +70,6 @@ def build_coupled_system(root: str | Path, system_id: str) -> dict[str, Any]:
             "availability_activation_rule": "activated <= available",
             "power_flow_model": system_config["power_flow_model"],
             "operating_windows": select_rts_windows(root_path) if system_id == "rts_gmlc" else ["intact_base"],
-            "scope_exclusions": ["MANTLE quotient", "threat envelope", "external baseline", "comparative performance"],
         },
     }
     out = root_path / "data" / "modified" / system_id
