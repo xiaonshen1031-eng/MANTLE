@@ -1,0 +1,10 @@
+system_id: ieee39
+default_topology: meshed
+main_control_bus: 30
+regional_control_buses: [3, 14, 26]
+field_buses: [0, 2, 5, 8, 11, 17, 20, 23, 28, 31, 32, 33, 34, 35, 36, 37, 38]
+backup_power_hours: {main: 24, regional: 8, field: 3, device: 1}
+local_autonomy_ratio: 0.30
+link_repair_time_hours: 4
+variants: [tree, meshed, redundant_meshed]
+

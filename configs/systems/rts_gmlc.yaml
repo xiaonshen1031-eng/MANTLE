@@ -1,0 +1,14 @@
+system_id: rts_gmlc
+source: GridMod RTS-GMLC official repository
+source_url: https://github.com/GridMod/RTS-GMLC
+source_commit: 3ece0d3725c844056132393ee252b3083dd4eab4
+base_power_mva: 100.0
+time_step_hours: 1.0
+power_flow_model: AC Newton-Raphson
+selected_operating_windows: [low_stress, high_load, high_renewable_variability]
+candidate_disrupted_components: [branch_A1, branch_A8, branch_B1, branch_B8, branch_C1, branch_C8, bus_101, bus_201, bus_301]
+storage_buses: [113, 213, 313]
+black_start_generator_uids: [113_STEAM_1, 213_STEAM_1, 313_STEAM_1]
+mission_buses: [113, 213, 313, 320]
+justification: "Mission assignments cover all three RTS areas and a fourth high-load/renewable interface bus."
+

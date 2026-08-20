@@ -1,0 +1,11 @@
+system_id: rts_gmlc
+crew_count: 4
+crew_locations: [101, 201, 301, 313]
+storage_count: 3
+storage_buses: [113, 213, 313]
+emergency_communication_count: 2
+black_start_resources: [113_STEAM_1, 213_STEAM_1, 313_STEAM_1]
+travel_time_hours: 3
+repair_time_hours: 8
+reactivation_delay_hours: 2
+

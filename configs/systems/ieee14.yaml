@@ -1,0 +1,12 @@
+system_id: ieee14
+source: pandapower.networks.case14 (MATPOWER/PYPOWER lineage)
+source_url: https://matpower.org/docs/ref/matpower5.0/case14.html
+base_power_mva: 100.0
+time_step_hours: 1.0
+power_flow_model: AC Newton-Raphson
+candidate_disrupted_components: [branch_0, branch_1, branch_2, branch_3, branch_4, gen_0, bus_3, bus_8]
+storage_buses: [5, 9]
+black_start_generator_indices: [0]
+mission_buses: [3, 5, 9, 13]
+justification: "Buses 4/6/10/14 (one-based) span the central load corridor, voltage-support region, lower radial corridor, and terminal load area."
+

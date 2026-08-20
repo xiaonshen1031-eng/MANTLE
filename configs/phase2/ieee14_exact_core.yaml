@@ -1,0 +1,36 @@
+experiment_id: ieee14_exact_core
+system_id: ieee14
+horizon: 3
+budget_max: 2
+observation_mode: incomplete
+power_model: frozen_dc_load_shedding
+selected_components:
+  power_branches: [branch_0, branch_1]
+  generators: [gen_0]
+  mission_load_assets: [bus_3]
+  communication_components: [ieee14_MAIN, ieee14_FIELD_3]
+  observation_channels: [obs_branch_0]
+all_components:
+  - branch_0
+  - branch_1
+  - gen_0
+  - bus_3
+  - ieee14_MAIN
+  - ieee14_FIELD_3
+mission_ids: [ieee14_medical, ieee14_emcomm, ieee14_water, ieee14_command]
+resources:
+  repair_crews: 1
+  repair_duration_steps: 1
+  emergency_communication_units: 1
+  local_autonomy_units: 1
+disruption_actions:
+  cost_per_action: 1
+  allow_secondary_disruption: true
+  include_observation_degradation: true
+safe_isolation: true
+selection_rationale: >-
+  The two source-corridor branches, the black-start generator, the bus-3 medical
+  load, the main control node, and its bus-3 field node jointly exercise physical,
+  supply, mission-load, communication, observation, repair, and explicit
+  availability-versus-activation semantics. Selection is deterministic and taken
+  only from Phase-1 accepted IEEE-14 artifacts.

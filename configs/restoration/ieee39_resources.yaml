@@ -1,0 +1,11 @@
+system_id: ieee39
+crew_count: 4
+crew_locations: [3, 14, 26, 30]
+storage_count: 3
+storage_buses: [3, 14, 26]
+emergency_communication_count: 2
+black_start_resources: [gen_0, gen_4]
+travel_time_hours: 2
+repair_time_hours: 5
+reactivation_delay_hours: 1
+

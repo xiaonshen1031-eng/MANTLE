@@ -1,0 +1,7 @@
+system_id: ieee39
+missions:
+  - {mission_id: ieee39_medical, mission_name: Emergency medical care, mission_type: medical, mapped_power_buses: [3], minimum_power_requirement: 0.80, communication_required: true, maximum_interruption_duration: 1, backup_energy_duration: 3, minimum_recovery_duration: 2}
+  - {mission_id: ieee39_emcomm, mission_name: Emergency communication, mission_type: emergency_communication, mapped_power_buses: [14], minimum_power_requirement: 0.70, communication_required: true, maximum_interruption_duration: 2, backup_energy_duration: 6, minimum_recovery_duration: 2}
+  - {mission_id: ieee39_water, mission_name: Water supply, mission_type: water, mapped_power_buses: [26], minimum_power_requirement: 0.60, communication_required: true, maximum_interruption_duration: 6, backup_energy_duration: 2, minimum_recovery_duration: 3}
+  - {mission_id: ieee39_command, mission_name: Emergency command and public safety, mission_type: command_public_safety, mapped_power_buses: [28], minimum_power_requirement: 0.85, communication_required: true, maximum_interruption_duration: 1, backup_energy_duration: 4, minimum_recovery_duration: 3}
+

@@ -1,0 +1,7 @@
+B_max: 3
+scenario_count_per_family_per_system: 6
+horizon: 12
+secondary_disruption_stage: 5
+observation_modes: [complete, incomplete]
+seed_namespace: disruption_scenario_generation
+

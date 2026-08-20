@@ -1,0 +1,10 @@
+system_id: rts_gmlc
+default_topology: meshed
+main_control_bus: 301
+regional_control_buses: [101, 201, 301]
+field_buses: [103, 107, 113, 119, 203, 207, 213, 219, 303, 307, 313, 320]
+backup_power_hours: {main: 24, regional: 12, field: 4, device: 2}
+local_autonomy_ratio: 0.35
+link_repair_time_hours: 6
+variants: [tree, meshed, redundant_meshed]
+

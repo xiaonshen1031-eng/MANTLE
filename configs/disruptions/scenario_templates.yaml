@@ -1,0 +1,10 @@
+families:
+  I: {name: physical_only, observation_mode: complete, allowed_layers: [power]}
+  II: {name: coordinated_power_communication, observation_mode: complete, allowed_layers: [power, communication]}
+  III: {name: incomplete_damage_observation, observation_mode: incomplete, allowed_layers: [power, observation]}
+  IV: {name: secondary_during_restoration, observation_mode: complete, allowed_layers: [power, communication], secondary: true}
+  V: {name: integrated_compound, observation_mode: incomplete, allowed_layers: [power, communication, observation], secondary: true}
+action_costs: {physical_outage: 1, communication_outage: 1, observation_loss: 1, delayed_report: 1}
+allowed_action_types: [physical_outage, communication_outage, observation_loss, delayed_report]
+default_event_order: [disruption, observation_update, operator_decision_placeholder, resource_transition, repair_completion, safe_activation_update, mission_state_update]
+

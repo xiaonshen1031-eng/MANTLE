@@ -1,0 +1,13 @@
+system_id: ieee39
+source: pandapower.networks.case39 (MATPOWER New England case)
+source_url: https://matpower.org/docs/ref/matpower5.0/case39.html
+base_power_mva: 100.0
+time_step_hours: 1.0
+power_flow_model: AC Newton-Raphson
+candidate_disrupted_components: [branch_0, branch_4, branch_8, branch_12, branch_18, branch_24, gen_0, gen_4, bus_3, bus_14, bus_26]
+storage_buses: [3, 14, 26]
+black_start_generator_indices: [0, 4]
+mission_buses: [3, 14, 26, 28]
+optional_islanding_boundaries: [branch_8, branch_18, branch_24]
+justification: "Selected buses occupy distinct New England network regions and include load-centre and generator-adjacent locations."
+

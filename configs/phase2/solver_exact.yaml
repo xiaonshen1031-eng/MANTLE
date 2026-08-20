@@ -1,0 +1,11 @@
+solver: scipy_highs
+threads: 1
+random_seed: 20260718
+feasibility_tolerance: 1.0e-7
+value_tolerance: 1.0e-6
+optimality_gap: 0.0
+canonical_round_digits: 8
+deterministic_ordering: lexicographic
+tie_break_order: [mission_loss, eens, switching_cost, action_id]
+dc_claim_boundary: exact_only_for_frozen_finite_horizon_dc_model
+

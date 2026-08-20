@@ -1,0 +1,10 @@
+experiment_id: ieee14_exact_extended
+inherits: ieee14_exact_core.yaml
+system_id: ieee14
+horizon: 4
+budget_max: 3
+resource_limits:
+  wall_time_seconds: 120
+  peak_memory_mb: 4096
+timeout_is_correctness_failure: false
+

@@ -1,0 +1,11 @@
+states: [NORMAL, DEGRADED, BACKUP, FAILED, RECOVERING, RESTORED]
+rules:
+  - "served_ratio >= 1 and communication_ok -> NORMAL when not previously FAILED"
+  - "minimum_power_ratio <= served_ratio < 1 -> DEGRADED"
+  - "served_ratio < minimum_power_ratio and backup_remaining > 0 -> BACKUP"
+  - "interruption_duration > maximum_interruption_duration or backup_remaining <= 0 -> FAILED"
+  - "FAILED plus adequate supply and communication -> RECOVERING"
+  - "RECOVERING for minimum_recovery_duration -> RESTORED"
+  - "RECOVERING or RESTORED relapses when power/communication thresholds are violated"
+event_order_reference: configs/global.yaml
+
